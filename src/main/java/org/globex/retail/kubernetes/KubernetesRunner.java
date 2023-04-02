@@ -55,7 +55,6 @@ public class KubernetesRunner {
             return -1;
         }
         String bootstrapServer = new String(Base64.getDecoder().decode(bootstrapServerBase64));
-        System.out.println(bootstrapServer);
 
         String clientIdKey = System.getenv().getOrDefault("KEY_CLIENT_ID", "clientId");
         String clientIdBase64 = connectionSecret.getData().get(clientIdKey);
@@ -64,7 +63,6 @@ public class KubernetesRunner {
             return -1;
         }
         String clientId = new String(Base64.getDecoder().decode(clientIdBase64));
-        System.out.println(clientId);
 
         String securityProtocolKey = System.getenv().getOrDefault("KEY_SECURITY_PROTOCOL", "securityProtocol");
         String securityProtocolBase64 = connectionSecret.getData().get(securityProtocolKey);
@@ -73,7 +71,6 @@ public class KubernetesRunner {
             return -1;
         }
         String securityProtocol = new String(Base64.getDecoder().decode(securityProtocolBase64));
-        System.out.println(securityProtocol);
 
         String saslMechanismKey = System.getenv().getOrDefault("KEY_CLIENT_ID", "saslMechanism");
         String saslMechanismBase64 = connectionSecret.getData().get(saslMechanismKey);
@@ -82,7 +79,6 @@ public class KubernetesRunner {
             return -1;
         }
         String saslMechanism = new String(Base64.getDecoder().decode(saslMechanismBase64));
-        System.out.println(saslMechanism);
 
         //KafkaConnect cr
         ResourceDefinitionContext context = new ResourceDefinitionContext.Builder()
